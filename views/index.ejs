@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= title %></h1>
+<% if(todo.length!==0){ %>
+<ul>
+  <% for(var i=0, l=todo.length;i<l;i++){ %>
+  <li>
+  <a href="todos?kill=<%= i %>">&#10008;</a>
+  <%= todo[i] %>
+  </li>
+  <% } %>
+</ul>
+<% } %>
+<form action="/todos/add" method="post">
+  Que dois-je faire? <input type="text" name="todo">
+  <input type="submit" value="add">
+</form>
+
+</body>
+</html>
